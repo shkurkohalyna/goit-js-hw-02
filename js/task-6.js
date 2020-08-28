@@ -14,6 +14,23 @@ let input;
 const numbers = [];
 let total = 0;
 
+while (input !== null) {
+  input = prompt("ввести число: ");
+  numbers.push(input);
+  if (input === null) {
+    break;
+  } else if (input === "") {
+    alert("Было введено не число, попробуйте еще раз!");
+    continue;
+  } else if (isNaN(parseInt(input))) {
+    alert("Было введено не число, попробуйте еще раз!");
+    continue;
+  }
+  total += Number.parseInt(input);
+}
+console.log(numbers);
+alert("Общая сумма чисел равна: " + total);
+
 // function mapArray(array) {
 //     'use strict';
 //     const numbers = new Array(array.length);
@@ -28,36 +45,36 @@ let total = 0;
 // // [-20, 0, 20]
 // console.log(mapArray([-2.5, 0, 2.5]));
 
-function filterArray(array) {
-  "use strict";
-  const numbers = [];
+// function filterArray(array) {
+//   "use strict";
+//   const numbers = [];
 
-  for (let i = 0; i < array.length; i += 1) {
-    if (Number.isFinite(array[i])) numbers.push(array[i]);
-  }
-  return numbers;
-}
-console.log(filterArray([-2, 0, 2]));
-//
-// [-2, 0, 2]
-console.log(filterArray([1, NaN, Infinity]));
-//
-// [1]
-console.log(filterArray([0, -0, 100, "100"]));
-//
-// [0, 0, 100]
-console.log(filterArray([undefined, false, null, [], 1]));
-//
-// [1]
-console.log(filterArray([{}, () => {}, 2]));
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (Number.isFinite(array[i])) numbers.push(array[i]);
+//   }
+//   return numbers;
+// }
+// console.log(filterArray([-2, 0, 2]));
+// //
+// // [-2, 0, 2]
+// console.log(filterArray([1, NaN, Infinity]));
+// //
+// // [1]
+// console.log(filterArray([0, -0, 100, "100"]));
+// //
+// // [0, 0, 100]
+// console.log(filterArray([undefined, false, null, [], 1]));
+// //
+// // [1]
+// console.log(filterArray([{}, () => {}, 2]));
 
-function reduceArray(array) {
-  "use strict";
-  let total = 0;
-  // Write code under this line
-  for (let i = 0; i < array.length; i += 1) {
-    total += array[i];
-  }
-  return total;
-}
-console.log(reduceArray([1, 2, 3]));
+// function reduceArray(array) {
+//   "use strict";
+//   let total = 0;
+//   // Write code under this line
+//   for (let i = 0; i < array.length; i += 1) {
+//     total += array[i];
+//   }
+//   return total;
+// }
+// console.log(reduceArray([1, 2, 3]));
